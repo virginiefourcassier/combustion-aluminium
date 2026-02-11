@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Combustion de l'aluminium</title>
+<style>
+  :root{
+    --bg:#ececec;
+    --panel:#ffffff;
+    --border:#cfcfcf;
+    --text:#222;
+  }
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family:Arial, sans-serif;
+    color:var(--text);
+  }
+  .wrap{
+    max-width:980px;
+    margin:0 auto;
+    padding:10px 10px 0 10px;
+    text-align:center;
+  }
+  .title{
+    margin:6px 0 8px 0;
+    font-size:20px;
+    font-weight:700;
+  }
+  .controls{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    align-items:center;
+    justify-content:center;
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:10px;
+  }
+  .ctrl{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:4px 6px;
+  }
+  .ctrl label{
+    font-size:13px;
+    white-space:nowrap;
+  }
+  .ctrl input[type="range"]{
+    width:170px;
+  }
+  .ctrl .val{
+    font-size:13px;
+    min-width:34px;
+    text-align:left;
+  }
+  button{
+    border:1px solid var(--border);
+    background:#f7f7f7;
+    border-radius:10px;
+    padding:8px 10px;
+    font-size:13px;
+    cursor:pointer;
+  }
+  button:active{ transform: translateY(1px); }
+  canvas{
+    background:#f8f8f8;
+    border:1px solid var(--border);
+    border-radius:10px;
+    display:block;
+    margin:10px auto 8px auto;
+  }
+  .footer{
+    font-size:12px;
+    color:#555;
+    margin:0 0 10px 0;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="title">Combustion de la poudre d’aluminium</div>
+
+    <div class="controls">
+      <div class="ctrl">
+        <label for="alSlider">Al (solide)</label>
+        <input id="alSlider" type="range" min="20" max="90" step="5" value="40">
+        <div class="val" id="alVal">40</div>
+      </div>
+
+      <div class="ctrl">
+        <label for="o2Slider">O₂ (gaz)</label>
+        <input id="o2Slider" type="range" min="3" max="30" step="3" value="12">
+        <div class="val" id="o2Val">12</div>
+      </div>
+
+      <div class="ctrl">
+        <label for="tSlider">Température</label>
+        <input id="tSlider" type="range" min="1" max="5" step="1" value="2">
+        <div class="val" id="tVal">×2</div>
+      </div>
+
+      <button id="symbolsBtn" type="button">Symboles : OFF</button>
+      <button id="pauseBtn" type="button">Pause</button>
+      <button id="resetBtn" type="button">Reset</button>
+    </div>
+
+    <canvas id="canvas" width="900" height="600"></canvas>
+
+    <div class="footer">Virginie Fourcassier. Lycée Pierre de Fermat. Toulouse</div>
+  </div>
+
+<script src="app.js?v=1"></script>
+</body>
+</html>
